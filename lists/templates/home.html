@@ -4,11 +4,14 @@
     </head>
     
     <body>
-        <h1> Start a new Things to do list </h1>
-        <form method="POST" action="/lists/new">
-
+        {% extends 'base.html'%}
+        <h1> {% block header_text %} Start a new Things to do list {% endblock %}</h1>
+        <form method="POST" action="{% block form_action %}/lists/new{% endblock %}">
+            <p style="text-align: center;">
             <input name="item_text" id="id_new_item" placeholder="Enter a things-do item" />
+            </p>
             {% csrf_token %}
+            
         </form>
         
     </body>
