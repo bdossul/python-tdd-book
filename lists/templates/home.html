@@ -1,14 +1,14 @@
 <html>
     <head>
-    <title> Things to do </title>
+    <title>To-Do lists</title>
     </head>
     
     <body>
         {% extends 'base.html'%}
-        <h1> {% block header_text %} Start a new Things to do list {% endblock %}</h1>
+        <h1> {% block header_text %} Start a new To-Do lists {% endblock %}</h1>
         <form method="POST" action="{% block form_action %}/lists/new{% endblock %}">
             <p style="text-align: center;">
-            <input name="item_text" id="id_new_item" placeholder="Enter a things-do item" />
+            <input name="item_text" id="id_new_item" placeholder="Enter a to-do item" />
             </p>
             {% csrf_token %}
             
