@@ -40,6 +40,8 @@ else:
     SECRET_KEY = 'insecure-key-for-dev'
     ALLOWED_HOSTS = []
 
+
+
 # Application definition
 
 INSTALLED_APPS = [
