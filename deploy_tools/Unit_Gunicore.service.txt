@@ -1,0 +1,17 @@
+[Unit]
+Description=Gunicorn server for superlists-staging.bdienterprises.com
+
+[Service]
+Restart=on-failure  
+User=makopeth
+WorkingDirectory=/home/makopeth/sites/superlists-staging.bdienterprises.com
+
+EnvironmentFile=/home/makopeth/sites/superlists-staging.bdienterprises.com/.env
+
+
+ExecStart=/home/makopeth/sites/superlists-staging.bdienterprises.com/virtualenv/bin/gunicorn \
+    --bind unix:/tmp/superlists-staging.bdienterprises.com.socket \
+    superlists.wsgi:application  
+
+[Install]
+WantedBy=multi-user.target 
