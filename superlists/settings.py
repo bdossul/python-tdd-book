@@ -15,7 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-'''
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -23,12 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@j&2wc+-xvf1h0u!qc+ifez^ctxj*jorl7rg(10#9k*z=9lqab'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-'''
 
+'''
 if 'DJANGO_DEBUG_FALSE' in os.environ:
     DEBUG = False
     SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
@@ -37,6 +38,7 @@ else:
     DEBUG = True
     SECRET_KEY = 'insecure-key-for-dev'
     ALLOWED_HOSTS = []
+'''
 
 # Application definition
 
@@ -49,6 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'lists',
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
