@@ -6,6 +6,7 @@ import time
 
 
 
+
 MAX_WAIT = 10
 
 class FunctionalTest(StaticLiveServerTestCase):
@@ -21,13 +22,14 @@ class FunctionalTest(StaticLiveServerTestCase):
 
     def wait_for(self, fn):
         start_time = time.time()
-        while True: 
-            try: 
+        while True:
+            try:
                 return fn()
-            except (AssertionError, WebDriverException) as e: 
+            except (AssertionError, WebDriverException) as e:
                 if time.time() - start_time > MAX_WAIT:
-                    raise e 
+                    raise e
                 time.sleep(0.5)
+
 
     def wait_for_row_in_list_table(self, row_text):
         start_time = time.time()
