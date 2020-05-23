@@ -149,3 +149,4 @@ EMAIL_HOST_PASSWORD = os.environ.get('Sabiha1954')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+
