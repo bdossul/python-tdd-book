@@ -6,6 +6,7 @@ from django.core.urlresolvers import reverse
 import sys
 
 
+
 def send_login_email(request):
     email = request.POST['email']
     print(type(send_mail))
@@ -22,7 +23,9 @@ def send_login_email(request):
           [email],
     )
 
-    messages.success(request, "Check your email, we've sent you a link you can use to log in.")
+    messages.success(request, "Check your email, we've sent you a link you can use to log in."
+    
+    )
     
     return redirect('/') 
 

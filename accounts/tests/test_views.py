@@ -1,7 +1,7 @@
 from django.test import TestCase
-import accounts.views
 from unittest.mock import patch, call
 from accounts.models import Token
+
 
 
 
@@ -22,12 +22,11 @@ class SendLoginEmailViewTest(TestCase):
 
         self.assertEqual(mock_send_mail.called, True)
         (subject, body, from_email, to_list), kwargs = mock_send_mail.call_args
-        
         self.assertEqual(subject, 'Your login link for Superlists')
         self.assertEqual(from_email, 'noreply@superlists')
         self.assertEqual(to_list, ['edith@example.com'])
 
-
+        
     def test_adds_succes_message(self):
         response = self.client.post('/accounts/send_login_email', data={'email': 'edith@example'}, follow=True)
 
@@ -38,6 +37,7 @@ class SendLoginEmailViewTest(TestCase):
 
         )
         self.assertEqual(message.tags, "success")
+
 
     def test_creates_token_associated_with_email(self):
         self.client.post('/accounts/send_login_email', data={

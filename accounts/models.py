@@ -18,4 +18,3 @@ class User(models.Model):
 class Token(models.Model):
     email = models.EmailField()
     uid = models.CharField(default=uuid.uuid4, max_length=40)
-    
