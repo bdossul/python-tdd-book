@@ -1,9 +1,7 @@
 from django.conf import settings
+from .base import FunctionalTest
 from .server_tools import create_session_on_server
 from .management.commands.create_session import create_pre_authenticated_session
-from .base import FunctionalTest
-
-
 
 
 class MyListsTest(FunctionalTest):
