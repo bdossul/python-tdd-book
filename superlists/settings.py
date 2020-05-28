@@ -126,6 +126,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
+"""
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -142,6 +143,9 @@ LOGGING = {
     },
     'root': {'level': 'INFO'},
 }
+
+"""
+
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'baktest232@gmail.com'
