@@ -145,8 +145,6 @@ LOGGING = {
 }
 
 
-
-
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'baktest232@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
